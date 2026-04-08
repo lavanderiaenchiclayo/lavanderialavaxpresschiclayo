@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>LavaXpress Chiclayo | Lavandería y Limpieza de Zapatillas</title>
+  <meta name="description" content="Lavandería y limpieza de zapatillas en Chiclayo. Servicio rápido, resultados profesionales. Escríbenos al WhatsApp o llámanos. ¡Tu ropa y sneakers como nuevos!" />
+  <meta name="keywords" content="lavandería Chiclayo, limpieza de zapatillas Chiclayo, lavado de ropa Chiclayo, sneaker cleaning Chiclayo, LavaXpress" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="LavaXpress Chiclayo" />
+
+  <!-- Open Graph (Facebook / WhatsApp) -->
+  <meta property="og:title" content="LavaXpress Chiclayo | Lavandería y Limpieza de Zapatillas" />
+  <meta property="og:description" content="Servicio profesional de lavandería y limpieza de zapatillas en Chiclayo. Resultados garantizados." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lavanderiaenchiclayo.github.io/lavanderialavaxpresschiclayo/" />
+
+  <!-- Google Tag placeholder — pega tu gtag.js aquí -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXX"></script> -->
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --azul: #0057FF;
+      --azul-oscuro: #003FBB;
+      --azul-claro: #E8F0FF;
+      --negro: #0A0A0A;
+      --blanco: #FFFFFF;
+      --gris: #F4F4F4;
+      --gris-texto: #555;
+      --acento: #FFD600;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--blanco);
+      color: var(--negro);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid var(--azul);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5vw; height: 64px;
+    }
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem; color: var(--azul);
+      letter-spacing: 2px; text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none; color: var(--negro);
+      font-weight: 500; font-size: 0.95rem;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--azul); }
+    .nav-cta {
+      background: var(--azul); color: var(--blanco) !important;
+      padding: .45rem 1.2rem; border-radius: 6px;
+      font-weight: 700 !important;
+    }
+    .nav-cta:hover { background: var(--azul-oscuro); color: var(--blanco) !important; }
+
+    /* ── HERO ── */
+    #hero {
+      margin-top: 64px;
+      min-height: calc(100vh - 64px);
+      background: var(--negro);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg-pattern {
+      position: absolute; inset: 0;
+      background-image: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 40px,
+        rgba(0,87,255,0.04) 40px,
+        rgba(0,87,255,0.04) 41px
+      );
+    }
+    .hero-left {
+      position: relative; z-index: 2;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 5vw 4vw 5vw 6vw;
+      animation: slideUp .8s ease both;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: var(--azul); color: var(--blanco);
+      font-size: .8rem; font-weight: 700; letter-spacing: 2px;
+      padding: .35rem .9rem; border-radius: 100px;
+      margin-bottom: 1.5rem; width: fit-content;
+      text-transform: uppercase;
+    }
+    .hero-badge::before { content: '●'; font-size: .6rem; color: var(--acento); }
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.5rem, 7vw, 6rem);
+      line-height: .95; color: var(--blanco);
+      margin-bottom: 1.5rem;
+    }
+    .hero-title span { color: var(--azul); }
+    .hero-desc {
+      color: rgba(255,255,255,.7);
+      font-size: 1.05rem; line-height: 1.7;
+      max-width: 440px; margin-bottom: 2.5rem;
+    }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: .6rem;
+      background: #25D366; color: var(--blanco);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem; font-weight: 700;
+      padding: .85rem 1.8rem; border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 4px 24px rgba(37,211,102,.4);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(37,211,102,.5); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: .6rem;
+      background: transparent; color: var(--blanco);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem; font-weight: 600;
+      padding: .85rem 1.8rem; border-radius: 8px;
+      border: 2px solid rgba(255,255,255,.3);
+      text-decoration: none;
+      transition: border-color .2s, background .2s;
+    }
+    .btn-secondary:hover { border-color: var(--azul); background: rgba(0,87,255,.1); }
+    .hero-stats {
+      display: flex; gap: 2.5rem; margin-top: 3rem;
+    }
+    .stat { display: flex; flex-direction: column; }
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.2rem; color: var(--acento); line-height: 1;
+    }
+    .stat-label { color: rgba(255,255,255,.5); font-size: .8rem; margin-top: .2rem; }
+
+    .hero-right {
+      position: relative; z-index: 2;
+      display: flex; align-items: center; justify-content: center;
+      padding: 3rem;
+    }
+    .hero-img-wrap {
+      position: relative; width: 100%; max-width: 480px;
+    }
+    .hero-img-wrap img {
+      width: 100%; border-radius: 16px;
+      object-fit: cover; aspect-ratio: 4/3;
+      box-shadow: 0 32px 80px rgba(0,0,0,.6);
+    }
+    .hero-img-badge {
+      position: absolute; bottom: -20px; left: -20px;
+      background: var(--azul); color: var(--blanco);
+      padding: 1rem 1.4rem; border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0,87,255,.4);
+    }
+    .hero-img-badge strong {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem; display: block; line-height: 1;
+    }
+    .hero-img-badge span { font-size: .75rem; opacity: .8; }
+
+    /* ── SERVICIOS ── */
+    #servicios {
+      padding: 100px 6vw;
+      background: var(--gris);
+    }
+    .section-label {
+      font-size: .78rem; font-weight: 700; letter-spacing: 3px;
+      color: var(--azul); text-transform: uppercase;
+      margin-bottom: .6rem;
+    }
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1; margin-bottom: 1rem;
+    }
+    .section-sub {
+      color: var(--gris-texto); font-size: 1.05rem;
+      max-width: 540px; line-height: 1.7; margin-bottom: 3.5rem;
+    }
+    .servicios-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .servicio-card {
+      background: var(--blanco);
+      border-radius: 16px; padding: 2.2rem;
+      border: 2px solid transparent;
+      transition: border-color .3s, transform .3s, box-shadow .3s;
+      position: relative; overflow: hidden;
+    }
+    .servicio-card::before {
+      content: ''; position: absolute;
+      top: 0; left: 0; right: 0; height: 4px;
+      background: var(--azul);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform .3s;
+    }
+    .servicio-card:hover { border-color: var(--azul-claro); transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,87,255,.12); }
+    .servicio-card:hover::before { transform: scaleX(1); }
+    .servicio-icon {
+      width: 56px; height: 56px; border-radius: 12px;
+      background: var(--azul-claro); display: flex;
+      align-items: center; justify-content: center;
+      font-size: 1.8rem; margin-bottom: 1.2rem;
+    }
+    .servicio-card h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem; margin-bottom: .7rem; letter-spacing: .5px;
+    }
+    .servicio-card p { color: var(--gris-texto); line-height: 1.6; font-size: .95rem; }
+    .servicio-lista {
+      list-style: none; margin-top: 1rem; display: flex; flex-direction: column; gap: .4rem;
+    }
+    .servicio-lista li {
+      font-size: .9rem; color: var(--gris-texto);
+      display: flex; align-items: center; gap: .5rem;
+    }
+    .servicio-lista li::before { content: '✓'; color: var(--azul); font-weight: 700; }
+
+    /* ── POR QUÉ NOSOTROS ── */
+    #porque {
+      padding: 100px 6vw;
+      background: var(--negro);
+      color: var(--blanco);
+    }
+    #porque .section-title { color: var(--blanco); }
+    #porque .section-sub { color: rgba(255,255,255,.6); }
+    .porque-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .porque-item {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 14px; padding: 2rem;
+      transition: background .3s, border-color .3s;
+    }
+    .porque-item:hover { background: rgba(0,87,255,.15); border-color: var(--azul); }
+    .porque-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem; color: var(--azul);
+      line-height: 1; margin-bottom: .5rem;
+    }
+    .porque-item h4 { font-size: 1rem; font-weight: 700; margin-bottom: .5rem; }
+    .porque-item p { color: rgba(255,255,255,.5); font-size: .88rem; line-height: 1.6; }
+
+    /* ── PROCESO ── */
+    #proceso {
+      padding: 100px 6vw;
+      background: var(--blanco);
+    }
+    .proceso-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0; margin-top: 3rem; position: relative;
+    }
+    .proceso-steps::before {
+      content: ''; position: absolute;
+      top: 36px; left: 10%; right: 10%; height: 2px;
+      background: linear-gradient(90deg, var(--azul), var(--azul-claro));
+    }
+    .paso {
+      display: flex; flex-direction: column; align-items: center;
+      text-align: center; padding: 0 1.5rem; position: relative;
+    }
+    .paso-num {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: var(--azul); color: var(--blanco);
+      font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.2rem; position: relative; z-index: 1;
+      box-shadow: 0 4px 20px rgba(0,87,255,.3);
+    }
+    .paso h4 { font-weight: 700; margin-bottom: .5rem; }
+    .paso p { color: var(--gris-texto); font-size: .9rem; line-height: 1.5; }
+
+    /* ── CTA WHATSAPP ── */
+    #cta {
+      padding: 100px 6vw;
+      background: var(--azul);
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    #cta::before {
+      content: 'LAVAXPRESS';
+      position: absolute; font-family: 'Bebas Neue', sans-serif;
+      font-size: 20vw; color: rgba(255,255,255,.05);
+      top: 50%; left: 50%; transform: translate(-50%,-50%);
+      white-space: nowrap; pointer-events: none;
+    }
+    #cta h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      color: var(--blanco); line-height: 1;
+      margin-bottom: 1rem; position: relative;
+    }
+    #cta p {
+      color: rgba(255,255,255,.8); font-size: 1.1rem;
+      max-width: 500px; margin: 0 auto 2.5rem; line-height: 1.6;
+      position: relative;
+    }
+    .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; position: relative; }
+    .btn-wsp {
+      display: inline-flex; align-items: center; gap: .7rem;
+      background: var(--blanco); color: var(--azul);
+      font-weight: 800; font-size: 1.05rem;
+      padding: 1rem 2rem; border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 0 8px 32px rgba(0,0,0,.2);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn-wsp:hover { transform: translateY(-3px); box-shadow: 0 16px 48px rgba(0,0,0,.3); }
+    .btn-maps {
+      display: inline-flex; align-items: center; gap: .7rem;
+      background: transparent; color: var(--blanco);
+      font-weight: 600; font-size: 1rem;
+      padding: 1rem 2rem; border-radius: 10px;
+      border: 2px solid rgba(255,255,255,.4);
+      text-decoration: none;
+      transition: background .2s, border-color .2s;
+    }
+    .btn-maps:hover { background: rgba(255,255,255,.1); border-color: var(--blanco); }
+
+    /* ── UBICACION ── */
+    #ubicacion {
+      padding: 80px 6vw;
+      background: var(--gris);
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+    }
+    #ubicacion .section-title { font-size: clamp(2rem, 4vw, 3.2rem); }
+    .ubicacion-info { display: flex; flex-direction: column; gap: 1.2rem; margin-top: 2rem; }
+    .ubic-item {
+      display: flex; gap: 1rem; align-items: flex-start;
+    }
+    .ubic-icon {
+      width: 44px; height: 44px; min-width: 44px;
+      background: var(--azul-claro); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+    }
+    .ubic-item h5 { font-weight: 700; margin-bottom: .2rem; }
+    .ubic-item p, .ubic-item a { color: var(--gris-texto); font-size: .95rem; text-decoration: none; }
+    .ubic-item a:hover { color: var(--azul); }
+    .map-embed {
+      border-radius: 16px; overflow: hidden;
+      box-shadow: 0 16px 48px rgba(0,0,0,.12);
+      height: 340px;
+    }
+    .map-embed iframe { width: 100%; height: 100%; border: 0; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--negro); color: rgba(255,255,255,.5);
+      text-align: center; padding: 2.5rem 6vw;
+      font-size: .88rem;
+    }
+    footer strong { color: var(--blanco); }
+    footer a { color: var(--azul); text-decoration: none; }
+
+    /* ── FLOATING WA ── */
+    .wa-float {
+      position: fixed; bottom: 24px; right: 24px; z-index: 999;
+      width: 60px; height: 60px; border-radius: 50%;
+      background: #25D366; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 32px rgba(37,211,102,.5);
+      text-decoration: none; transition: transform .2s, box-shadow .2s;
+      animation: pulse 2s ease infinite;
+    }
+    .wa-float:hover { transform: scale(1.1); }
+    .wa-float svg { width: 30px; height: 30px; fill: white; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 8px 32px rgba(37,211,102,.5); }
+      50%       { box-shadow: 0 8px 48px rgba(37,211,102,.8); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      #hero { grid-template-columns: 1fr; min-height: auto; padding-bottom: 3rem; }
+      .hero-right { display: none; }
+      .hero-left { padding: 2.5rem 5vw; }
+      .nav-links { display: none; }
+      .proceso-steps::before { display: none; }
+      #ubicacion { grid-template-columns: 1fr; }
+      .map-embed { height: 260px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="#hero">LavaXpress</a>
+    <ul class="nav-links">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#proceso">¿Cómo funciona?</a></li>
+      <li><a href="#ubicacion">Ubicación</a></li>
+      <li><a href="https://wa.me/51924100271?text=Hola%2C%20quiero%20cotizar%20un%20servicio%20de%20LavaXpress" target="_blank" class="nav-cta">WhatsApp</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-left">
+      <div class="hero-badge">Chiclayo · Servicio Express</div>
+      <h1 class="hero-title">Tu ropa y<br/>zapatillas<br/><span>como nuevas.</span></h1>
+      <p class="hero-desc">Lavandería profesional y limpieza de sneakers en Chiclayo. Rápido, cuidadoso y con resultados que se notan.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/51924100271?text=Hola%2C%20quiero%20cotizar%20un%20servicio%20de%20LavaXpress" target="_blank" class="btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Cotizar por WhatsApp
+        </a>
+        <a href="#servicios" class="btn-secondary">Ver servicios ↓</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">+500</span><span class="stat-label">Clientes satisfechos</span></div>
+        <div class="stat"><span class="stat-num">24h</span><span class="stat-label">Entrega express</span></div>
+        <div class="stat"><span class="stat-num">2</span><span class="stat-label">Servicios especializados</span></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <!-- Imagen principal: reemplaza el src con tu foto real -->
+      <div class="hero-img-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1545173168-9f1947eebb7f?w=800&auto=format&fit=crop"
+          alt="Servicio de lavandería LavaXpress Chiclayo"
+          loading="eager"
+        />
+        <div class="hero-img-badge">
+          <strong>Express</strong>
+          <span>Entrega en 24h</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios">
+    <p class="section-label">Lo que hacemos</p>
+    <h2 class="section-title">Nuestros Servicios</h2>
+    <p class="section-sub">Dos especialidades, un solo estándar: resultados que impresionan y un trato que se nota.</p>
+
+    <div class="servicios-grid">
+      <div class="servicio-card">
+        <div class="servicio-icon">👕</div>
+        <h3>Lavandería</h3>
+        <p>Lavamos, secamos y doblamos tu ropa con cuidado profesional. Usamos productos de calidad que cuidan cada tela.</p>
+        <ul class="servicio-lista">
+          <li>Ropa del día a día</li>
+          <li>Ropa de cama y toallas</li>
+          <li>Prendas delicadas</li>
+          <li>Servicio express disponible</li>
+        </ul>
+      </div>
+      <div class="servicio-card">
+        <div class="servicio-icon">👟</div>
+        <h3>Limpieza de Zapatillas</h3>
+        <p>Sneakers, deportivas y calzado especial restaurados a su mejor versión. Limpieza profunda sin dañar materiales.</p>
+        <ul class="servicio-lista">
+          <li>Sneakers y deportivas</li>
+          <li>Cuero y ante</li>
+          <li>Suela y plantilla</li>
+          <li>Blanqueado de bordes</li>
+        </ul>
+      </div>
+      <div class="servicio-card">
+        <div class="servicio-icon">⚡</div>
+        <h3>Servicio Express</h3>
+        <p>¿Lo necesitas rápido? Contamos con servicio express para entrega en el menor tiempo posible sin sacrificar calidad.</p>
+        <ul class="servicio-lista">
+          <li>Entrega en 24 horas</li>
+          <li>Coordinación por WhatsApp</li>
+          <li>Recojo y entrega disponible</li>
+          <li>Confirmación en tiempo real</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUÉ NOSOTROS -->
+  <section id="porque">
+    <p class="section-label" style="color: rgba(0,87,255,.8);">Nuestra diferencia</p>
+    <h2 class="section-title">¿Por qué elegir<br/>LavaXpress?</h2>
+    <p class="section-sub">No solo lavamos ropa — cuidamos lo que usas todos los días.</p>
+    <div class="porque-grid">
+      <div class="porque-item">
+        <div class="porque-num">01</div>
+        <h4>Profesionalismo real</h4>
+        <p>Cada prenda y par de zapatillas recibe atención personalizada según su material y nivel de suciedad.</p>
+      </div>
+      <div class="porque-item">
+        <div class="porque-num">02</div>
+        <h4>Resultados garantizados</h4>
+        <p>Si no quedas satisfecho, lo resolvemos. Tu confianza es nuestra prioridad.</p>
+      </div>
+      <div class="porque-item">
+        <div class="porque-num">03</div>
+        <h4>Atención por WhatsApp</h4>
+        <p>Coordina tu recojo, consulta el estado de tu pedido y recibe tu entrega todo por chat.</p>
+      </div>
+      <div class="porque-item">
+        <div class="porque-num">04</div>
+        <h4>Ubicación céntrica</h4>
+        <p>Estamos en el corazón de Chiclayo, fácil de llegar y con atención rápida.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section id="proceso">
+    <p class="section-label">Así de simple</p>
+    <h2 class="section-title">¿Cómo funciona?</h2>
+    <p class="section-sub">En 4 pasos tu ropa o zapatillas quedan como nuevas.</p>
+    <div class="proceso-steps">
+      <div class="paso">
+        <div class="paso-num">1</div>
+        <h4>Escríbenos</h4>
+        <p>Contáctanos por WhatsApp y cuéntanos qué necesitas lavar.</p>
+      </div>
+      <div class="paso">
+        <div class="paso-num">2</div>
+        <h4>Entrega o recojo</h4>
+        <p>Lleva tus prendas a 7 de Enero 328 o coordinamos el recojo.</p>
+      </div>
+      <div class="paso">
+        <div class="paso-num">3</div>
+        <h4>Procesamos</h4>
+        <p>Lavamos con cuidado profesional usando los mejores productos.</p>
+      </div>
+      <div class="paso">
+        <div class="paso-num">4</div>
+        <h4>¡Listo!</h4>
+        <p>Recibe tu ropa o zapatillas como nuevas en tiempo récord.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta">
+    <h2>¿Listo para<br/>estrenar tu ropa?</h2>
+    <p>Escríbenos ahora y obtén tu cotización en minutos. Sin esperas, sin complicaciones.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/51924100271?text=Hola%2C%20quiero%20cotizar%20un%20servicio%20de%20LavaXpress" target="_blank" class="btn-wsp">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Cotizar por WhatsApp
+      </a>
+      <a href="https://maps.google.com/?q=7+de+Enero+328+Chiclayo" target="_blank" class="btn-maps">
+        📍 Cómo llegar
+      </a>
+    </div>
+  </section>
+
+  <!-- UBICACIÓN -->
+  <section id="ubicacion">
+    <div>
+      <p class="section-label">Encuéntranos</p>
+      <h2 class="section-title">Estamos en<br/>Chiclayo</h2>
+      <div class="ubicacion-info">
+        <div class="ubic-item">
+          <div class="ubic-icon">📍</div>
+          <div>
+            <h5>Dirección</h5>
+            <p>7 de Enero 328, Chiclayo, Lambayeque</p>
+          </div>
+        </div>
+        <div class="ubic-item">
+          <div class="ubic-icon">📱</div>
+          <div>
+            <h5>WhatsApp</h5>
+            <a href="https://wa.me/51924100271?text=Hola%2C%20quiero%20cotizar%20un%20servicio%20de%20LavaXpress" target="_blank">+51 924 100 271</a>
+          </div>
+        </div>
+        <div class="ubic-item">
+          <div class="ubic-icon">🕐</div>
+          <div>
+            <h5>Horario de atención</h5>
+            <p>Lunes a Sábado · 8:00 am – 7:00 pm</p>
+          </div>
+        </div>
+        <div class="ubic-item">
+          <div class="ubic-icon">📘</div>
+          <div>
+            <h5>Síguenos</h5>
+            <a href="https://www.facebook.com/LavaXpressChiclayo" target="_blank">Facebook: LavaXpress Chiclayo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="map-embed">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.6!2d-79.8370!3d-6.7714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sCalle+7+de+Enero+328%2C+Chiclayo!5e0!3m2!1ses!2spe!4v1"
+        allowfullscreen loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Ubicación LavaXpress Chiclayo">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 <strong>LavaXpress Chiclayo</strong> · 7 de Enero 328, Chiclayo · 
+      <a href="https://wa.me/51924100271" target="_blank">+51 924 100 271</a>
+    </p>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/51924100271?text=Hola%2C%20quiero%20cotizar%20un%20servicio%20de%20LavaXpress" target="_blank" class="wa-float" aria-label="Contactar por WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
+
+</body>
+</html>
